@@ -1,0 +1,361 @@
+/* Basic reset and body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #000;
+    overflow: hidden;
+}
+
+/* Canvas styling */
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure canvas is behind all content */
+}
+
+/* Blue circle at the top-left corner */
+.blue-circle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 50%;
+    z-index: -2; /* Ensure circle is behind all content */
+}
+
+/* Orange and yellow circles at the bottom-right corner */
+.orange-circle {
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: -2; /* Ensure circle is behind all content */
+}
+
+.yellow-circle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: -2; /* Ensure circle is behind all content */
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white; /* Changed from black to white */
+    border-bottom: 2px solid black; /* Changed from white to black */
+    z-index: 2; /* Ensure navbar is above the canvas */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.logo a {
+    color: #000; /* Changed from #fff to black */
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #e0e0e0; /* Changed from #171710 to light gray */
+    border-radius: 30px;
+}
+
+.menu-item {
+    position: relative;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu a {
+    position: relative;
+    color: #000; /* Changed from #fff to black */
+    text-decoration: none;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.menu-item:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Changed from rgba(249, 1, 249, 0.7) to rgba(0, 0, 0, 0.7) */
+    background-color: rgba(0, 0, 0, 0.2); /* Changed from rgba(255, 1, 255, 0.2) to rgba(0, 0, 0, 0.2) */
+}
+
+/* Main content container */
+.container {
+    text-align: center;
+    padding: 100px 20px;
+    border-style: double;
+    border-width: 8px; /* Adjust the width to make the border lines bigger and bolder */
+    border-color: #fff; /* You can change the color as needed */
+    position: relative;
+    z-index: 1; /* Ensure content is above the canvas */
+}
+
+/* Image styling within container */
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main heading styling */
+.container h1 {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+/* Subheading styling */
+.container h2 {
+    font-size: 40px;
+    margin: 20px 0;
+    font-weight: 400;
+}
+
+/* Button styling */
+.btn {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #ccc;
+}
+
+/* Carousel dots container */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Individual carousel dot styling */
+.carousel-dots div {
+    height: 10px;
+    width: 10px;
+    background-color: #555;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Active carousel dot styling */
+.carousel-dots div.active {
+    background-color: #fff;
+}
+
+.center-rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 20px;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1; /* Ensure it's above the canvas but below other content */
+}
+
+.center-rectangle h1,
+.center-rectangle p {
+    margin: 0;
+    color: #fff;
+}
+
+.center-movies {
+    position: absolute;
+    top: 150px; /* Adjust the top position to make space for the title */
+    left: 50%;
+    width: 1500px;
+    min-height: 600px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 0; /* Ensure it's behind the content */
+    margin-top: 50px;
+    
+}
+
+/* Card container to center cards */
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    width: 1500px;
+    height: 600px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.card-container {
+    position: absolute;
+    transition: transform 1s ease, z-index 1s ease;
+}
+
+.card-container-1 {
+    margin-top: 60px;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 500px;
+}
+
+.card-container-2, .card-container-5 {
+    z-index: 4;
+    width: 300px;
+    height: 450px;
+}
+
+.card-container-2 {
+    margin-top: 60px;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-container-5 {
+    margin-top: 60px;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-container-3, .card-container-4 {
+    z-index: 3;
+    width: 250px;
+    height: 400px;
+}
+
+.card-container-3 {
+    margin-top: 60px;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-container-4 {
+    margin-top: 60px;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(249, 1, 249, 0.7);
+}
+
+.card:hover .card-text {
+    opacity: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-control {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.left-arrow {
+    left: -60px;
+}
+
+.right-arrow {
+    right: -60px;
+}
